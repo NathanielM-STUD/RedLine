@@ -5,4 +5,8 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+
+use App\Controllers\ChatController;
+
+$routes->get('chat', [ChatController::class, 'index']);
+$routes->post('sendMessage', [ChatController::class, 'sendMessage']);
